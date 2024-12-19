@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+</head>
+<body>
+    <h1>Food Menu</h1>
+    <ul>
+        {% for menu in menus %}
+        <li>
+            <h3>{{ menu.name }}</h3>
+            <p>{{ menu.description }}</p>
+            <p>Category: {{ menu.category.name }}</p>
+            {% if menu.suitable_for_diabetics %}
+            <p style="color: green;">Suitable for Diabetics</p>
+            {% else %}
+            <p style="color: red;">Not Suitable for Diabetics</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
